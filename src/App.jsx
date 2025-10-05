@@ -20,7 +20,7 @@ for (let i = 1; i < length; i++) {
 },[length,numberAllowed,useCharacter,setPassword])
   return (
     <>
-  <div className="w-full max-w-md mx-auto shadow-md rounded-lg px-4 py-3 my-8 bg-gray-800 text-orange-500">
+  <div className="w-full max-w-md mx-auto shadow-md rounded-lg px-4 py-3 my-8 bg-gray-800 text-white">
   <h1 className="text-white text-center my-3">Password generator</h1>
   <div className="flex shadow rounded-lg overflow-hidden mb-4 bg-white">
     <input 
@@ -38,9 +38,19 @@ for (let i = 1; i < length; i++) {
       min={6}
       max={50}
       value={length}  
-      className='cursor-pointer green-600'  
+      className='w-40
+            h-2
+            bg-gray-300 
+            rounded-lg  
+            cursor-pointer
+            accent-green-500'  
+      
       onChange={(e)=>{setlength(e.target.value)}}  />
       <label> Length : {length}</label>
+    </div>
+    <div className='flex item-center gap-x-l text-white'>
+      <input type="checkbox" defaultChecked={numberAllowed} id='numberInput' onChange={()=>{setnumberAllowed((prev)=>!prev);}}/>
+      <label htmlFor="numberInput"> Number</label>
     </div>
   </div>
 </div>
